@@ -1,0 +1,42 @@
+{% set name = "stdcompat" %}
+{% set version = "0.0.2" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/robertu94/std_compat/archive/{{ version }}.tar.gz
+  sha256: 36424399e649be38bdb21899aa45f94aebba25c66048bab2751b1b3b9fd27238
+
+build:
+  skip: True  # [win or osx]
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - cmake
+    - make
+    - pkg-config
+  host:
+    - boost-cpp
+  run:
+    - boost-cpp
+
+about:
+  home: https://github.com/robertu94/std_compat
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: COPYRIGHT.txt
+  summary: 'Set of compatibility headers for C++ 14, 17, and 20 for C++11'
+  description: |
+    LibStdCompat is a set of compatibility headers for C++ 14, 17, and
+    20 for C++11. It aims to be lighter weight and more narrowly
+    tailored than some other alternatives such as Boost or replacing
+    your standard library with libcxx when certain fewer features are
+    needed.
+  doc_url: https://github.com/robertu94/std_compat/blob/master/README.markdown
+  dev_url: https://github.com/robertu94/std_compat
+
