@@ -1,5 +1,5 @@
 {% set name = "stdcompat" %}
-{% set version = "0.0.7" %}
+{% set version = "0.0.12" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/robertu94/std_compat/archive/{{ version }}.tar.gz
-  sha256: 8cb4ed704aef427bbe4c86ee874a350561e6e059223e7b3d60f1e0d7300ccfe9
+  sha256: 67c1d1724122a1ba7cebcd839658786680fa06a549369f4a7c36a44ad93ddd5d 
 
 build:
   skip: True  # [win or osx]
-  number: 1
+  number: 0
 
 requirements:
   build:
